@@ -62,6 +62,13 @@ func WithMiddleware(m ...middleware.Middleware) ClientOption {
 	}
 }
 
+// WithStreamMiddleware with client stream middleware.
+func WithStreamMiddleware(m ...middleware.Middleware) ClientOption {
+	return func(s *clientOptions) {
+		s.streamMiddleware = m
+	}
+}
+
 // WithDiscovery with client discovery.
 func WithDiscovery(d registry.Discovery) ClientOption {
 	return func(o *clientOptions) {

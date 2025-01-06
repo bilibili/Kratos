@@ -42,6 +42,17 @@ func TestWithMiddleware(t *testing.T) {
 	}
 }
 
+func TestWithStreamMiddleware(t *testing.T) {
+	o := &clientOptions{}
+	v := []middleware.Middleware{
+		func(middleware.Handler) middleware.Handler { return nil },
+	}
+	WithStreamMiddleware(v...)(o)
+	if !reflect.DeepEqual(v, o.streamMiddleware) {
+		t.Errorf("expect %v but got %v", v, o.streamMiddleware)
+	}
+}
+
 type mockRegistry struct{}
 
 func (m *mockRegistry) GetService(_ context.Context, _ string) ([]*registry.ServiceInstance, error) {
