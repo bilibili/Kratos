@@ -13,7 +13,7 @@ jobs:
   build:
     strategy:
       matrix:
-        go: [ 1.20.x, 1.21.x, 1.22.x ]
+        go: [ 1.21.x, 1.22.x, 1.23.x ]
     name: build & test
     runs-on: ubuntu-latest
     services:

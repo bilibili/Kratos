@@ -1,6 +1,6 @@
 module github.com/go-kratos/kratos/contrib/log/aliyun/v2
 
-go 1.19
+go 1.21
 
 require (
 	github.com/aliyun/aliyun-log-go-sdk v0.1.75

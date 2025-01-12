@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package testdata;
+
+import "buf/validate/validate.proto";
+import "validate/validate.proto";
+
+option go_package = "github.com/go-kratos/kratos/contrib/middleware/validate/internal/testdata";
+
+message Legacy {
+  string name = 1 [(validate.rules).string.min_len = 5];
+  int32 age = 2 [(validate.rules).int32.gt = 18];
+}
+
+message Mixed {
+  string name = 1 [(buf.validate.field).string.min_len = 5];
+  int32 age = 2 [(validate.rules).int32.gt = 18];
+}
+
+message Modern {
+  string name = 1 [(buf.validate.field).string.min_len = 5];
+  int32 age = 2 [(buf.validate.field).int32.gt = 18];
+}

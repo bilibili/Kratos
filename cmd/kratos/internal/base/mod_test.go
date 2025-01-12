@@ -25,7 +25,7 @@ func TestModulePath(t *testing.T) {
 
 	mod := `module github.com/go-kratos/kratos/v2
 
-go 1.19`
+go 1.21`
 	_, err = f.WriteString(mod)
 	if err != nil {
 		t.Fatal(err)
