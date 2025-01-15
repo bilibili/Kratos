@@ -244,7 +244,7 @@ func (r *Registry) resolve(ctx context.Context, ss *serviceSet) error {
 					time.Sleep(time.Second)
 					continue
 				}
-				if len(tmpService) != 0 && tmpIdx != idx {
+				if tmpIdx != idx {
 					services = tmpService
 					ss.broadcast(services)
 				}
