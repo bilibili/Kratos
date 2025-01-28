@@ -14,7 +14,7 @@ jobs:
       - name: Checkout source code
         uses: actions/checkout@v4
       - name: Mirror Github to Gitee
-        uses: Yikun/hub-mirror-action@v1.4
+        uses: Yikun/hub-mirror-action@v1.5
         with:
           src: github/go-kratos
           dst: gitee/go-kratos
