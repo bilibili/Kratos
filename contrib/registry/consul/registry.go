@@ -262,7 +262,7 @@ func (r *Registry) resolve(ctx context.Context, ss *serviceSet) error {
 					}
 					continue
 				}
-				if len(tmpService) != 0 && tmpIdx != idx {
+				if tmpIdx != idx {
 					services = tmpService
 					ss.broadcast(services)
 				}
